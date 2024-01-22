@@ -2,3 +2,45 @@
 * {
      box-sizing: border-box;
 }
+
+/* body / background */
+
+body {
+     background-color: rgb(148, 203, 148);
+}
+
+/* main */
+
+main {
+     max-width: 900px;
+     margin: auto;
+     background-color: white;
+     border: rgb(60, 60, 60) 1.5px solid;
+     border-radius: 10px;
+}
+main > * {
+     text-align: center;
+     margin-top: 20px;
+     padding-left: 30px;
+     padding-right: 30px;
+}
+
+
+/* container for plant divs */
+
+.plant-div-container {
+     width: 80%;
+     margin: auto;
+     min-height: 450px;
+     background: rgb(255, 241, 243);
+     border: rgb(60, 60, 60) 1.5px solid;
+     border-radius: 10px;
+     
+}
+
+
+/* Plant div */
+
+.plant-div * {
+     display: inline-block;
+}
