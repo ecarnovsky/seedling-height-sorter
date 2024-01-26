@@ -23,6 +23,8 @@ if (isMetric==="true"){
 document.querySelector(".standard-btn").addEventListener('click', changeSystem)
 document.querySelector(".metric-btn").addEventListener('click', changeSystem)
 
+document.querySelector(".clear-all-btn").addEventListener('click', function () {document.querySelector(".clear-all-alert").classList.toggle('hidden')})
+
 
 function changeSystem(){
     if (this.classList.contains("standard-btn")){
