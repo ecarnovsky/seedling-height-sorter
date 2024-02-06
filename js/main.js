@@ -61,7 +61,55 @@ function refreshListView(){
     document.querySelector('.plant-div-container > div').innerHTML = ""
     let arrayOfPlants = plantList.getArray()
     
-    arrayOfPlants.forEach(plant => 
+    arrayOfPlants.forEach(plant => {
+
+        let firstDisplayHeight 
+        let firstDisplayHeightUnit
+
+        let heightInFt
+        let secondDisplayHeightPlusUnit = ""
+
+
+        if(isMetric === "false"){
+
+            firstDisplayHeightUnit = 'in'
+
+            switch (plant.unit) {
+                case 'in':
+                    firstDisplayHeight = plant.height
+                    break;
+                case 'ft':
+                    firstDisplayHeight = plant.height * 12
+                    heightInFt = plant.height
+                    break;
+                case 'cm':
+                    firstDisplayHeight = (plant.height * 0.3937).toFixed(1)
+                    break;
+            }
+        } else if(isMetric === "true"){
+
+            console.log("test")
+            console.log(isMetric)
+
+            firstDisplayHeightUnit = 'cm'
+
+            switch (plant.unit) {
+                case 'cm':
+                    firstDisplayHeight = plant.height
+                    break;
+                case 'in':
+                    firstDisplayHeight = (plant.height * 2.54).toFixed(1)
+                    break;
+                case 'ft':
+                    firstDisplayHeight = (plant.height * 12 * 2.54).toFixed(1)
+                    break;
+            }
+        }
+
+        if (heightInFt){
+            secondDisplayHeightPlusUnit = `(${heightInFt} ft)`
+        }
+
         document.querySelector('.plant-div-container > div').innerHTML += 
             `<div class="plant-div">
                 <div class="plant-name-div">
@@ -69,10 +117,10 @@ function refreshListView(){
                 </div>
                 <div class="plant-height-div">
                     <div>
-                        <span>${plant.height}</span>
+                        <span>${firstDisplayHeight} ${firstDisplayHeightUnit}</span>
                     </div>
                     <div>
-                        <span>${plant.height}</span>
+                        <span>${secondDisplayHeightPlusUnit}</span>
                     </div>
                 </div>
                 <div class="plant-controls-div">
@@ -80,7 +128,7 @@ function refreshListView(){
                     <i class="fa-solid fa-trash clickable delete-plant-btn"></i>
                 </div>
             </div>`
-        )
+    })
 
 }
 
