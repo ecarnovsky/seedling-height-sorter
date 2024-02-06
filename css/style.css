@@ -48,3 +48,7 @@ main > * {
 .hidden {
      visibility: hidden;
 }
+
+main {
+     margin-top: 10px;
+}

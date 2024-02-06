@@ -25,8 +25,8 @@
 
 			<div>
 				<div class="btn-group" role="group" aria-label="Basic example">
-					<button type="button" class="btn btn-secondary metric-btn">Metric</button>
-					<button type="button" class="btn btn-secondary standard-btn">Standard</button>
+					<button type="button" class="btn btn-primary metric-btn units-system-btn">Metric</button>
+					<button type="button" class="btn btn-primary standard-btn units-system-btn">Standard</button>
 				  </div>
 			</div>
 
@@ -41,15 +41,26 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text" id="basic-addon1">Height</span>
 						</div>
-						<input type="text" class="form-control" placeholder="How tall is the plant when fully grown?" aria-label="Height" aria-describedby="basic-addon1">
-						<div class="input-group-append">
+						<input type="text" class="form-control" placeholder="How tall does the plant get?" aria-label="Height" aria-describedby="basic-addon1">
+						<!-- <div class="input-group-append">
 							<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Unit</button>
 							<div class="dropdown-menu">
 							  <a class="dropdown-item" href="#">in</a>
 							  <a class="dropdown-item" href="#">ft</a>
 							  <a class="dropdown-item" href="#">cm</a>
 							</div>
-						  </div>
+						  </div> -->
+						  
+							<div class="input-group-prepend">
+							  <label class="input-group-text" for="inputGroupSelect01">Units</label>
+							</div>
+							<select class="custom-select" id="inputGroupSelect01">
+							  <option selected>Choose...</option>
+							  <option value="1">in</option>
+							  <option value="2">ft</option>
+							  <option value="3">cm</option>
+							</select>
+						  
 
 						  <button type="button" class="btn btn-primary">Add</button>
 
