@@ -3,6 +3,10 @@
      box-sizing: border-box;
 }
 
+.hidden {
+     visibility: hidden;
+}
+
 /* body / background */
 
 body {
@@ -17,6 +21,7 @@ main {
      background-color: white;
      border: rgb(60, 60, 60) 1.5px solid;
      border-radius: 10px;
+     margin-top: 10px;
 }
 main > * {
      text-align: center;
@@ -37,6 +42,9 @@ main > * {
      border-radius: 10px;
      
 }
+.plant-div-container > div {
+     margin-top: 20px;
+}
 
 
 /* Plant div */
@@ -45,10 +53,10 @@ main > * {
      display: inline-block;
 }
 
-.hidden {
-     visibility: hidden;
-}
 
-main {
+.plant-div{
+     background: rgba(255, 255, 255, .6);
+     border: rgb(60, 60, 60) 1.5px solid;
+     border-radius: 7px;
      margin-top: 10px;
 }
