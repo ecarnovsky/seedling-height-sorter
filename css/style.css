@@ -87,3 +87,26 @@ main > * {
 .delete-plant-btn {
      padding-left: 5px;
 }
+
+
+
+/* media queries */
+
+@media print {
+     body {
+          -webkit-filter: grayscale(100%);
+          -moz-filter: grayscale(100%);
+          -ms-filter: grayscale(100%);
+          filter: grayscale(100%);
+     }
+     body, .clickable {
+          visibility: hidden;
+     }
+     .plant-div-container > div {
+          visibility: visible;
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+ }
