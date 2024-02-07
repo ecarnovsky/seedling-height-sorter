@@ -31,13 +31,33 @@ document.querySelector(".clear-all-btn").addEventListener('click', function () {
 document.querySelector('#add-btn').addEventListener('click', addPlant)
 
 function changeSystem(){
+
+    let metricBtn = document.querySelector('.metric-btn')
+    let standardBtn = document.querySelector('.standard-btn')
+
+    let pressedBtn
+    let unPressedBtn
+    
     if (this.classList.contains("standard-btn")){
         setCookie("isMetric", false)
-        location.reload()
+        pressedBtn = standardBtn
+        unPressedBtn = metricBtn
     } else if (this.classList.contains("metric-btn")) {
         setCookie("isMetric", true)
-        location.reload()
+        pressedBtn = metricBtn
+        unPressedBtn = standardBtn
     }
+
+    pressedBtn.classList.add("active")
+    pressedBtn.setAttribute("aria-pressed", "true")
+
+    unPressedBtn.classList.remove("active")
+    unPressedBtn.setAttribute("aria-pressed", "false")
+
+
+    isMetric = getCookie("isMetric")
+    refreshListView()
+
 }
 
 function setCookie(name, value){
@@ -58,6 +78,7 @@ function addPlant(){
 }
 
 function refreshListView(){
+
     document.querySelector('.plant-div-container > div').innerHTML = ""
     let arrayOfPlants = plantList.getArray()
     
@@ -87,9 +108,6 @@ function refreshListView(){
                     break;
             }
         } else if(isMetric === "true"){
-
-            console.log("test")
-            console.log(isMetric)
 
             firstDisplayHeightUnit = 'cm'
 
