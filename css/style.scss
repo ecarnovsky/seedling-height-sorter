@@ -1,0 +1,150 @@
+
+$borderSettings: rgb(60, 60, 60) 1.5px solid;
+
+
+* {
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.only-visible-when-printing{
+    display: none;
+}
+
+.clickable{
+    cursor: pointer;
+}
+.clickable:hover{
+    color: rgb(101, 101, 101);
+}
+
+/* body / background */
+
+body {
+    background-color: rgb(148, 203, 148);
+}
+
+/* main */
+
+main {
+    max-width: 900px;
+    margin: auto;
+    background-color: white;
+    border: $borderSettings;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+main > * {
+    text-align: center;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.main-description {
+    text-align: left;
+}
+
+
+/* container for plant divs */
+
+.plant-div-container {
+    width: 80%;
+    margin: auto;
+    min-height: 450px;
+    background: rgb(255, 241, 243);
+    border: $borderSettings;
+    border-radius: 10px;
+    
+    
+}
+.plant-div-container > div {
+    margin-top: 20px;
+}
+
+
+/* Plant div */
+
+.plant-div * {
+    display: inline-block;
+}
+
+
+.plant-div{
+    background: rgba(255, 255, 255, .6);
+    border: $borderSettings;
+    border-radius: 7px;
+    margin-top: 10px;
+    display: flex;  
+}
+
+.plant-div > div{
+    width: 33.33%;
+    text-align: left;
+    padding: 6px 10px;
+}
+
+.plant-div .plant-controls-div {
+    text-align: right;
+}
+.delete-plant-btn {
+    padding-left: 5px;
+}
+
+
+
+/* media queries */
+
+@media screen and (max-width: 900px)  {
+    body {
+         background-color: white;
+    }
+    main{
+         border: none;
+    }
+    
+    #name-field{
+         min-width: 90%;
+    }
+}
+
+@media screen and (max-width:800px){
+    #name-field{
+         min-width: 80%;
+    }
+}
+
+@media print {
+    body {
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         filter: grayscale(100%);
+    }
+    body, .clickable {
+         visibility: hidden;
+    }
+    .plant-div-container > div, .only-visible-when-printing{
+         visibility: visible;
+         position: absolute;
+         top: 0;
+         width: 100%;
+    }
+    .plant-div-container > div{
+         top: 60px;
+    }
+    .only-visible-when-printing{
+         display: block;
+         font-size: x-large;
+    }
+    .plant-div {
+         border: none;
+         font-size: large;
+         padding-left: 160px;
+    }
+}
