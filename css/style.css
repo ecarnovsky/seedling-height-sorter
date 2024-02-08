@@ -96,6 +96,15 @@ main > * {
 
 /* media queries */
 
+@media (max-width: 900px) {
+     body {
+          background-color: white;
+     }
+     main{
+          border: none;
+     }
+}
+
 @media print {
      body {
           -webkit-filter: grayscale(100%);
