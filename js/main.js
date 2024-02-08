@@ -1,3 +1,4 @@
+"use strict"
 // set up cookies if there are none 
 if (getCookie("isMetric") === undefined){
     setCookie("isMetric", false)
@@ -26,7 +27,10 @@ document.querySelector(".standard-btn").addEventListener('click', changeSystem)
 document.querySelector(".metric-btn").addEventListener('click', changeSystem)
 
 document.querySelector(".print-btn").addEventListener('click', function () {window.print()})
-document.querySelector(".clear-all-btn").addEventListener('click', function () {document.querySelector(".clear-all-alert").classList.toggle('hidden')})
+document.querySelector(".clear-all-btn").addEventListener('click', toogleClearAllAlertVisibility)
+document.querySelector(".no-clear-all-btn").addEventListener('click', toogleClearAllAlertVisibility)
+document.querySelector(".yes-clear-all-btn").addEventListener('click', deletePlantList)
+
 
 document.querySelector('#add-btn').addEventListener('click', addPlant)
 
@@ -147,7 +151,16 @@ function refreshListView(){
                 </div>
             </div>`
     })
+}
 
+function deletePlantList(){
+    plantList = new SortedPlantList()
+    refreshListView()
+    toogleClearAllAlertVisibility()
+}
+
+function toogleClearAllAlertVisibility(){
+    document.querySelector(".clear-all-alert").classList.toggle('hidden')
 }
 
 function getCookie(name){
