@@ -8,6 +8,10 @@
      visibility: hidden;
 }
 
+.only-visible-when-printing{
+     display: none;
+}
+
 .clickable{
      cursor: pointer;
 }
@@ -102,11 +106,22 @@ main > * {
      body, .clickable {
           visibility: hidden;
      }
-     .plant-div-container > div {
+     .plant-div-container > div, .only-visible-when-printing{
           visibility: visible;
           position: absolute;
-          left: 0;
           top: 0;
           width: 100%;
-        }
+     }
+     .plant-div-container > div{
+          top: 60px;
+     }
+     .only-visible-when-printing{
+          display: block;
+          font-size: x-large;
+     }
+     .plant-div {
+          border: none;
+          font-size: large;
+          padding-left: 160px;
+     }
  }

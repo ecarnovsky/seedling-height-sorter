@@ -22,6 +22,10 @@ if (isMetric==="true"){
 
 let plantList = new SortedPlantList()
 
+listOfPlantSuggestions.forEach(plant => {
+    document.getElementById("plant-suggestions").innerHTML += `<option value="${plant.name}"></option>`
+})
+
 
 document.querySelector(".standard-btn").addEventListener('click', changeSystem)
 document.querySelector(".metric-btn").addEventListener('click', changeSystem)
@@ -86,12 +90,6 @@ function changeSystem(){
 
 }
 
-function setCookie(name, value){
-
-    document.cookie = name + "=" + value
-
-}
-
 function addPlant(){
 
     let name = document.querySelector('#name-field').value
@@ -115,6 +113,7 @@ function addPlant(){
     document.querySelector('#name-field').value = ""
     document.querySelector('#height-field').value = ""
     focusOnNameField()
+
 }
 
 function refreshListView(){
@@ -123,6 +122,7 @@ function refreshListView(){
     let arrayOfPlants = plantList.getArray()
     
     arrayOfPlants.forEach(plant => {
+
 
         let firstDisplayHeight 
         let firstDisplayHeightUnit
@@ -197,6 +197,12 @@ function deletePlantList(){
 
 function toogleClearAllAlertVisibility(){
     document.querySelector(".clear-all-alert").classList.toggle('hidden')
+}
+
+function setCookie(name, value){
+
+    document.cookie = name + "=" + value
+
 }
 
 function getCookie(name){
