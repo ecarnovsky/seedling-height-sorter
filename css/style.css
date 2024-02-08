@@ -47,6 +47,7 @@ main > * {
      text-align: left;
 }
 
+
 /* container for plant divs */
 
 .plant-div-container {
@@ -96,12 +97,22 @@ main > * {
 
 /* media queries */
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px)  {
      body {
           background-color: white;
      }
      main{
           border: none;
+     }
+     
+     #name-field{
+          min-width: 90%;
+     }
+}
+
+@media screen and (max-width:800px){
+     #name-field{
+          min-width: 80%;
      }
 }
 
