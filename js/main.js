@@ -31,8 +31,30 @@ document.querySelector(".clear-all-btn").addEventListener('click', toogleClearAl
 document.querySelector(".no-clear-all-btn").addEventListener('click', toogleClearAllAlertVisibility)
 document.querySelector(".yes-clear-all-btn").addEventListener('click', deletePlantList)
 
+document.querySelector('#name-field').addEventListener('keydown', testIfMoveFocusToHeightField)
+document.querySelector('#height-field').addEventListener('keydown', testIfAddPlant)
 
 document.querySelector('#add-btn').addEventListener('click', addPlant)
+
+
+function testIfMoveFocusToHeightField(event){
+    if (event.keyCode == 13){
+        focusOnHeightField()
+    }
+}
+function focusOnHeightField(){
+    document.getElementById('height-field').focus()
+}
+function focusOnNameField(){
+    document.getElementById('name-field').focus()
+}
+
+function testIfAddPlant(event){
+    if (event.keyCode == 13){
+        focusOnNameField()
+        addPlant()
+    }
+}
 
 function changeSystem(){
 
@@ -73,12 +95,26 @@ function setCookie(name, value){
 function addPlant(){
 
     let name = document.querySelector('#name-field').value
+    name = name.charAt(0).toUpperCase() + name.slice(1)
+
     let height = document.querySelector('#height-field').value
     let unit = document.querySelector('#unit-field').value
+
+    if(name === ""){
+        focusOnNameField()
+        return 
+    }
+    if(!height){
+        focusOnHeightField()
+        return 
+    }
 
     let newPlant = new Plant(name, height, unit)
     plantList.add(newPlant)
     refreshListView()
+    document.querySelector('#name-field').value = ""
+    document.querySelector('#height-field').value = ""
+    focusOnNameField()
 }
 
 function refreshListView(){
