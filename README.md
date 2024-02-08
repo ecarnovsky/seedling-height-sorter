@@ -9,5 +9,5 @@ The live site can be viewed [here](https://superb-druid-b2a311.netlify.app/).
 - Editing and deletion of individual plants
 - All conversions being located in one file
 - Plant suggestions automatically populating the height input field
-- Improvements to the user interface
+- Improvements to the UI
 
