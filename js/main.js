@@ -40,6 +40,24 @@ document.querySelector('#height-field').addEventListener('keydown', testIfAddPla
 
 document.querySelector('#add-btn').addEventListener('click', addPlant)
 
+addEventListenersToPlantIcons()
+
+function addEventListenersToPlantIcons(){
+    let trashCans = document.querySelectorAll('.delete-plant-btn')
+    for (let i = 0; i < trashCans.length; i++){
+        trashCans[i].addEventListener('click', deletePlant)
+    }
+}
+
+function deletePlant(){
+    if(confirm(`Are you sure you want to delete ${this.parentElement.parentElement.querySelector('.plant-name-div').innerText}?`)){
+        let plantIndex = parseInt(this.parentElement.parentElement.id.split("-")[1])
+        plantList.deletePlant(plantIndex)
+        refreshListView()
+        addEventListenersToPlantIcons()
+    }
+
+}
 
 function testIfMoveFocusToHeightField(event){
     if (event.keyCode == 13){
@@ -113,6 +131,8 @@ function addPlant(){
     document.querySelector('#name-field').value = ""
     document.querySelector('#height-field').value = ""
     focusOnNameField()
+    addEventListenersToPlantIcons()
+
 
 }
 
@@ -121,7 +141,7 @@ function refreshListView(){
     document.querySelector('.plant-div-container > div').innerHTML = ""
     let arrayOfPlants = plantList.getArray()
     
-    arrayOfPlants.forEach(plant => {
+    arrayOfPlants.forEach( (plant, idx) => {
 
 
         let firstDisplayHeight 
@@ -169,7 +189,7 @@ function refreshListView(){
         }
 
         document.querySelector('.plant-div-container > div').innerHTML += 
-            `<div class="plant-div">
+            `<div id="plant-${idx}" class="plant-div">
                 <div class="plant-name-div">
                     <span>${plant.name}</span>
                 </div>

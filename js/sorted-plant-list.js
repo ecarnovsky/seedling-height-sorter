@@ -37,6 +37,18 @@ class SortedPlantList{
         }
     }
 
+    deletePlant(indexOfPlant){
+
+        this.plantsArr[indexOfPlant] = null
+
+        for(let i = indexOfPlant; i < this.plantsArr.length - 1; i++){
+
+            this.plantsArr[i] = this.plantsArr[i + 1]
+        }
+
+        this.plantsArr.length = this.plantsArr.length - 1
+    }
+
     getArray(){
         return this.plantsArr
     }
