@@ -91,6 +91,11 @@ main > * {
   padding-left: 5px;
 }
 
+.clear-all-btn, .clear-all-alert {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 /* media queries */
 @media screen and (max-width: 900px) {
   body {
