@@ -7,8 +7,9 @@ Click [here](https://superb-druid-b2a311.netlify.app/) to begin sorting your pla
 
 ### Features I am currently in the process of adding:
 
+- Editing of individual plants
+- Replacement the deletion confirmation popup with a yes/no buttons in the UI
 - The plant list being stored as a cookie
-- Editing and deletion of individual plants
 - All conversions being located in one file
 - Plant suggestions automatically populating the height input field
 - Improvements to the UI
