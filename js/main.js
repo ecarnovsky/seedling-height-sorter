@@ -14,6 +14,9 @@ if (isMetric==="true"){
     btn.classList.add("active")
     btn.setAttribute("aria-pressed", "true")
 
+    document.querySelector('#unit-field').value= "cm"
+
+
 } else {
     let btn = document.querySelector('.standard-btn')
     btn.classList.add("active")
@@ -91,10 +94,12 @@ function changeSystem(){
         setCookie("isMetric", false)
         pressedBtn = standardBtn
         unPressedBtn = metricBtn
+        document.querySelector('#unit-field').value= "in"
     } else if (this.classList.contains("metric-btn")) {
         setCookie("isMetric", true)
         pressedBtn = metricBtn
         unPressedBtn = standardBtn
+        document.querySelector('#unit-field').value= "cm"
     }
 
     pressedBtn.classList.add("active")
