@@ -194,8 +194,14 @@ function refreshListView(){
             secondDisplayHeightPlusUnit = `(${heightInFt} ft)`
         }
 
+        let optionalClass = ""
+
+        if(plant === plantList.mostRecentlyAddedPlant) {
+            optionalClass = "new-plant"
+        }
+
         document.querySelector('.plant-div-container > div').innerHTML += 
-            `<div id="plant-${idx}" class="plant-div">
+            `<div id="plant-${idx}" class="plant-div ${optionalClass}">
                 <div class="plant-name-div">
                     <span>${plant.name}</span>
                 </div>

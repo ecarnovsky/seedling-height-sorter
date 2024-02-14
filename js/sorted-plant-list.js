@@ -2,9 +2,12 @@
 class SortedPlantList{
     constructor(){
         this.plantsArr = []
+        this.mostRecentlyAddedPlant;
     }
 
     add(newPlant){
+
+        this.mostRecentlyAddedPlant = newPlant
 
         let indexOfNewPlant
 
@@ -35,6 +38,7 @@ class SortedPlantList{
                 }
             }
         }
+
     }
 
     deletePlant(indexOfPlant){
