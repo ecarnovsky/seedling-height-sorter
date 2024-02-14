@@ -11,7 +11,7 @@ class Plant {
         } else if (this.unit === "ft"){
             this.preciseHeight = this.height * 12 * 2.54
         } else {
-            this.preciseHeight = this.height
+            this.preciseHeight = Number(this.height)
         }
     }
 }

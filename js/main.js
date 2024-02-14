@@ -197,7 +197,7 @@ function refreshListView(){
         let optionalClass = ""
 
         if(plant === plantList.mostRecentlyAddedPlant) {
-            optionalClass = "new-plant"
+            optionalClass = "most-recently-added-plant"
         }
 
         document.querySelector('.plant-div-container > div').innerHTML += 
