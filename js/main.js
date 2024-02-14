@@ -219,6 +219,7 @@ function deletePlantList(){
     plantList = new SortedPlantList()
     refreshListView()
     toogleClearAllAlertVisibility()
+    focusOnNameField()
 }
 
 function toogleClearAllAlertVisibility(){
