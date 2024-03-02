@@ -42,14 +42,10 @@ class SortedPlantList{
     }
 
     deletePlant(indexOfPlant){
-
-        this.plantsArr[indexOfPlant] = null
-
-        for(let i = indexOfPlant; i < this.plantsArr.length - 1; i++){
-
-            this.plantsArr[i] = this.plantsArr[i + 1]
-        }
-
+        console.log("delete called")
+        console.log(indexOfPlant)
+        this.plantsArr=[...this.plantsArr].filter((id,plant)=>id!=indexOfPlant)
+        console.log("plants : ",this.plantsArr)
         this.plantsArr.length = this.plantsArr.length - 1
     }
 
