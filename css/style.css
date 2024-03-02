@@ -119,6 +119,7 @@ main .plant-div-container {
 }
 main .plant-div-container .plant-div {
   display: flex;
+  color: rgb(252, 252, 242);
 }
 main .plant-div-container .plant-div > div {
   padding: 5px 10px;
