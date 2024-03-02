@@ -1,6 +1,15 @@
 * {
   box-sizing: border-box;
   font-weight: 600;
+  color: rgb(252, 252, 242);
+}
+
+html {
+  font-size: 100%;
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .hidden {
@@ -11,140 +20,157 @@
   display: none;
 }
 
-.clickable {
-  cursor: pointer;
-}
-
-.clickable:hover {
-  color: rgb(101, 101, 101);
-}
-
-/* body / background */
 body {
-  background-color: rgb(148, 203, 148);
+  max-width: 650px;
+  margin: auto;
+}
+body > * {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-/* main */
+header {
+  font-size: 1.3rem;
+  background: radial-gradient(rgb(11, 109, 11), rgb(33, 142, 33));
+  display: flex;
+  height: 360px;
+  align-items: end;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  border: 3px solid rgba(33, 33, 33, 0.2);
+  border-radius: 100px 0;
+  justify-content: flex-end;
+}
+header h1 {
+  padding: 30px 60px;
+  font-family: "Courgette", cursive;
+  text-shadow: 0px 0px 2px black;
+}
+header h1 div {
+  padding-bottom: 12px;
+}
+header h1 div::first-letter {
+  font-size: 130%;
+}
+header h1 :first-child + div {
+  padding-left: 60px;
+}
+header h1 :last-child {
+  padding-left: 15px;
+}
+header img {
+  max-width: 340px;
+  border-radius: 100px 0;
+  margin-bottom: 17px;
+  margin-right: 17px;
+  border: 3px solid rgba(33, 33, 33, 0.2);
+}
+
 main {
-  max-width: 900px;
-  margin: auto;
-  background-color: white;
-  border: rgb(60, 60, 60) 1.5px solid;
-  border-radius: 10px;
-  margin-top: 10px;
+  background: radial-gradient(rgb(11, 109, 11), rgb(33, 142, 33));
+  border: 3px solid rgba(33, 33, 33, 0.2);
+  border-radius: 20px;
 }
-
-main > * {
-  text-align: center;
-  margin-top: 20px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.main-description {
-  text-align: left;
-}
-
-.metric-btn {
-  padding-left: 18px;
-  padding-right: 18px;
-}
-
-/* container for plant divs */
-.plant-div-container {
-  width: 80%;
-  margin: auto;
-  min-height: 450px;
-  background: rgb(255, 241, 243);
-  border: rgb(60, 60, 60) 1.5px solid;
-  border-radius: 10px;
-}
-
-.plant-div-container > div {
-  margin-top: 20px;
-}
-
-/* Plant div */
-.plant-div * {
-  display: inline-block;
-}
-
-.plant-div {
-  background: rgba(255, 255, 255, 0.6);
-  border: rgb(60, 60, 60) 1.5px solid;
-  border-radius: 7px;
-  margin-top: 10px;
+main .form-container {
+  padding-top: 30px;
   display: flex;
 }
-
-.plant-div > div {
-  width: 33.33%;
-  text-align: left;
-  padding: 6px 10px;
+main .form-container > div {
+  flex-grow: 1;
 }
-
-.plant-div .plant-controls-div {
-  text-align: right;
+main .form-container form {
+  flex-grow: 2;
+  padding-top: 50px;
 }
-
-.delete-plant-btn {
-  padding-left: 5px;
+main .form-container form button {
+  display: block;
+  margin: auto;
+}
+main .form-container form .input-group {
+  display: flex;
+  justify-content: center;
+}
+main .form-container form .input-group * {
+  color: rgb(55, 55, 55);
+}
+main .form-container form :first-child > * {
+  height: 45px;
+}
+main .form-container :last-child {
+  display: block;
+}
+main .form-container :last-child button {
+  border-radius: 100%;
+  border: radial-gradient(rgb(86, 109, 84), rgb(173, 182, 175) 7px solid);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  background: radial-gradient(rgb(16, 90, 8), rgb(11, 102, 29));
+  color: rgb(252, 252, 242);
+  height: 85px;
+  width: 85px;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+main .plant-div-container {
+  background: white;
+  border-radius: 10px;
+  margin: 30px 60px;
+  height: 500px;
+}
+main .plant-div-container .plant-div {
+  display: flex;
+}
+main .plant-div-container .plant-div > div {
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+main .plant-div-container .plant-div .fa-envira {
+  color: green;
+  margin-left: 10px;
+}
+main .plant-div-container .plant-div .plant-info-block {
+  display: flex;
+  background: radial-gradient(rgb(11, 109, 11), rgb(33, 142, 33));
+  border: 3px solid rgba(33, 33, 33, 0.2);
+  width: 100%;
+  justify-content: space-between;
+}
+main .plant-div-container .plant-div .plant-info-block > * {
+  width: 33%;
+}
+main .plant-div-container .plant-div .plant-info-block .plant-controls-div {
+  display: flex;
+  justify-content: right;
+  padding-top: 4px;
+}
+main .plant-div-container .plant-div .plant-info-block .plant-controls-div .edit-plant-btn {
+  padding-right: 10px;
+}
+main .plant-div-container .plant-div .plant-info-block .plant-controls-div .delete-plant-btn {
+  padding-right: 5px;
+}
+main .plant-div-container .plant-div .plant-height-div {
+  display: flex;
+}
+main .plant-div-container .plant-div .plant-height-div > * {
+  padding-right: 15px;
+}
+main .under-list-div > div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+main .under-list-div > div .clear-all-alert {
+  margin: 5px 0;
+}
+main .under-list-div > div > div:not(.clear-all-alert) {
+  padding: 0 20px;
 }
 
 .most-recently-added-plant {
-  box-shadow: 0 0 10px rgb(139, 203, 255);
-}
-
-.clear-all-btn, .clear-all-alert {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-/* media queries */
-@media screen and (max-width: 900px) {
-  body {
-    background-color: white;
-  }
-  main {
-    border: none;
-  }
-  #name-field {
-    min-width: 90%;
-  }
-}
-@media screen and (max-width: 800px) {
-  #name-field {
-    min-width: 80%;
-  }
-}
-@media print {
-  body {
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%);
-  }
-  body, .clickable {
-    visibility: hidden;
-  }
-  .plant-div-container > div, .only-visible-when-printing {
-    visibility: visible;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
-  .plant-div-container > div {
-    top: 60px;
-  }
-  .only-visible-when-printing {
-    display: block;
-    font-size: x-large;
-  }
-  .plant-div {
-    border: none;
-    font-size: large;
-    padding-left: 160px;
-  }
+  box-shadow: 0 0 10px #03f2ff;
 }
 
 /*# sourceMappingURL=style.css.map */

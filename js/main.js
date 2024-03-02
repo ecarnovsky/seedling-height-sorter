@@ -201,7 +201,12 @@ function refreshListView(){
         }
 
         document.querySelector('.plant-div-container > div').innerHTML += 
-            `<div id="plant-${idx}" class="plant-div ${optionalClass}">
+            `<div id="plant-${idx}" class="plant-div">
+            <div>
+                <i class="fa-brands fa-2xl fa-envira"></i>
+            </div>
+
+            <div class="plant-info-block ${optionalClass}">
                 <div class="plant-name-div">
                     <span>${plant.name}</span>
                 </div>
@@ -217,7 +222,8 @@ function refreshListView(){
                     <i class="fa-solid fa-pen-to-square clickable edit-plant-btn"></i>
                     <i class="fa-solid fa-trash clickable delete-plant-btn"></i>
                 </div>
-            </div>`
+            </div>
+        </div>`
     })
 }
 

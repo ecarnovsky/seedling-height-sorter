@@ -7,6 +7,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Seedling Height Sorter</title>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+
 		<script src="https://kit.fontawesome.com/53b2c9873e.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">		
 
@@ -15,36 +19,44 @@
 	</head>
 	<body>
 
-		<main>
+		<header>
 			<div>
-				<h1>Seedling Height Sorter</h1>
+				<h1><div>Seedling </div><div>Height</div><div>Sorter</div> </h1>
 			</div>
 			<div>
+				<img src="images/seedling4.jpg" alt="picture of a seedling">
+			</div>
+			<!-- <div>
 				<p class="main-description">Enter in your seedling information and they will be automatically sorted by height. The list can be printed so you can have it with you while planting.</p>
-			</div>
-
-			<div>
+			</div> -->
+		</header>
+		<main>
+			<!-- <div>
 				<div class="btn-group" role="group" aria-label="Basic example">
 					<button type="button" class="btn btn-primary metric-btn units-system-btn">Metric</button>
 					<button type="button" class="btn btn-primary standard-btn units-system-btn">Standard</button>
 				  </div>
-			</div>
+			</div> -->
 
-			<div>
+			<div class="form-container">
+				<div>
+
+				</div>
 				<form>
 					<div class="input-group mb-3">
-						<div class="input-group-prepend">
-						  <span class="input-group-text" id="basic-addon1">Name</span>
-						</div>
+						<span class="input-group-text" id="basic-addon1">Name</span>
 						<input type="text" id="name-field" class="form-control" list="plant-suggestions" placeholder="Marigold, Sunflower, Zinnia..." aria-label="Name" aria-describedby="basic-addon1">
-						<datalist id="plant-suggestions">
-						</datalist>
-						
+						<datalist id="plant-suggestions"></datalist>
+					</div>
+
+					<div class="input-group mb-3">
 						<div class="input-group-prepend">
 							<span class="input-group-text" id="basic-addon1">Height</span>
 						</div>
-						<input type="number" id="height-field" class="form-control" placeholder="How tall does the plant get?" aria-label="Height" aria-describedby="basic-addon1">
-						  
+						<input type="number" id="height-field" class="form-control" placeholder="How tall does the plant get?" aria-label="Height" aria-describedby="basic-addon1">  
+					</div>
+
+					<div class="input-group unit-input-group mb-3">
 						<div class="input-group-prepend">
 							<label class="input-group-text" for="inputGroupSelect01">Units</label>
 						</div>
@@ -53,42 +65,44 @@
 							<option value="ft">ft</option>
 							<option value="cm">cm</option>
 						</select>
-						  
-
-						  <button type="button" id="add-btn" class="btn btn-primary">Add</button>
-
-
-						  
 					</div>
+
+					<button type="button" id="add-btn" class="btn btn-primary">Add</button>
 					
 
-					
 				</form>
+				<div>
+					<button type="button" class="metric-btn units-system-btn">Metric</button>
+					<button type="button" class="standard-btn units-system-btn">Standard</button>
+				</div>
 			</div>
 
 			<span class="only-visible-when-printing">Sorted Seedling List</span>
 			<div class="plant-div-container">
 				<div>
-					
+
 				</div>
 
 			</div>
 
 			<div class="under-list-div">
 				<div>
-					<button type="button" class="btn btn-primary print-btn"><i class="fa-solid fa-print"></i></button>
+					<div>
+						<button type="button" class="btn btn-primary print-btn"><i class="fa-solid fa-print"></i></button>
+					</div>
+					<div>
+						<div>
+							<button type="button" class="btn btn-danger clear-all-btn">Clear all</button>
+						</div>
+					</div>
 				</div>
+
 				<div>
-					<div>
-						<button type="button" class="btn btn-danger clear-all-btn">Clear all</button>
-					</div>
-					<div>
-						<div class="alert alert-danger hidden clear-all-alert " role="alert">
-							<span> Are you sure you want to start over?</span>
-							<button type="button" class="btn btn-secondary btn-sm yes-clear-all-btn">Yes</button>
-							<button type="button" class="btn btn-secondary btn-sm no-clear-all-btn">No</button>
-						  </div>
-					</div>
+					<div class="alert alert-danger hidden clear-all-alert " role="alert">
+						<span> Are you sure you want to start over?</span>
+						<button type="button" class="btn btn-secondary btn-sm yes-clear-all-btn">Yes</button>
+						<button type="button" class="btn btn-secondary btn-sm no-clear-all-btn">No</button>
+					  </div>
 				</div>
 			</div>
 		</main>
