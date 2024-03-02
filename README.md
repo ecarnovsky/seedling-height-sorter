@@ -12,5 +12,5 @@ Click [here](https://superb-druid-b2a311.netlify.app/) to begin sorting your pla
 - The plant list being stored as a cookie
 - All conversions being located in one file
 - Plant suggestions automatically populating the height input field
-- Redesign the UI 
+- ~~Redesign the UI~~ Done.
 
