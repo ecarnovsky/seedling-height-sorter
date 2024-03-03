@@ -53,9 +53,10 @@ function addEventListenersToPlantIcons(){
 }
 
 function deletePlant(){
+    const plantElement=this.parentElement.parentElement.parentElement
     if(confirm(`Are you sure you want to delete ${this.parentElement.parentElement.querySelector('.plant-name-div').innerText}?`)){
         // plant indices are stored as ids in the format "plant-#"
-        let plantIndex = parseInt(this.parentElement.parentElement.id.split("-")[1])
+        let plantIndex = parseInt(plantElement.id.split("-")[1])
         plantList.deletePlant(plantIndex)
         refreshListView()
         addEventListenersToPlantIcons()
