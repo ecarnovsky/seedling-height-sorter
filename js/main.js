@@ -43,7 +43,7 @@ document.querySelector('#height-field').addEventListener('keydown', testIfAddPla
 
 document.querySelector('#add-btn').addEventListener('click', addPlant)
 
-addEventListenersToPlantIcons()
+refreshListView()
 
 function addEventListenersToPlantIcons(){
 
@@ -54,7 +54,7 @@ function addEventListenersToPlantIcons(){
         let editBtn = plantDivs[i].querySelector('.edit-plant-btn')
         editBtn.addEventListener('click', toggleEditPlantView)
     }
-    
+
 }
 
 
@@ -63,6 +63,14 @@ function toggleEditPlantView(){
 
 } 
 
+/**
+ * Deletes a plant from the sorted plant list
+ * and updates the DOM.
+ * 
+ * The plant's index is retrieved from the DOM
+ * and passed into the SortedPlantList's
+ * deletePlant method.
+ */
 function deletePlant(){
     const plantElement =this.parentElement.parentElement.parentElement
     if(confirm(`Are you sure you want to delete ${this.parentElement.parentElement.querySelector('.plant-name-div').innerText}?`)){
@@ -70,23 +78,37 @@ function deletePlant(){
         let plantIndex = parseInt(plantElement.id.split("-")[1])
         plantList.deletePlant(plantIndex)
         refreshListView()
-        addEventListenersToPlantIcons()
     }
 
 }
-
+/**
+ * Tests if the Enter key is pressed, and if so,
+ * calls the focusOnHeightField method.
+ */
 function testIfMoveFocusToHeightField(event){
     if (event.keyCode == 13){
         focusOnHeightField()
     }
 }
+/**
+ * Focuses on the height input field.
+ */
 function focusOnHeightField(){
     document.getElementById('height-field').focus()
 }
+/**
+ * Focuses on the name input field.
+ */
 function focusOnNameField(){
     document.getElementById('name-field').focus()
 }
 
+/**
+ * Tests if the Enter key is pressed, and if so,
+ * calls the focusOnNameField method and adds
+ * a new plant to the sorted plant list by 
+ * calling the addPlant method.
+ */
 function testIfAddPlant(event){
     if (event.keyCode == 13){
         focusOnNameField()
@@ -94,6 +116,10 @@ function testIfAddPlant(event){
     }
 }
 
+/**
+ * Changes the measurement system from Metric
+ * to Standard, and vice versa.
+ */
 function changeSystem(){
 
     let metricBtn = document.querySelector('.metric-btn')
@@ -149,7 +175,6 @@ function addPlant(){
     document.querySelector('#name-field').value = ""
     document.querySelector('#height-field').value = ""
     focusOnNameField()
-    addEventListenersToPlantIcons()
 
 
 }
@@ -237,6 +262,7 @@ function refreshListView(){
             </div>
         </div>`
     })
+    addEventListenersToPlantIcons()
 }
 
 function deletePlantList(){
