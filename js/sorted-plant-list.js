@@ -44,9 +44,8 @@ class SortedPlantList{
     deletePlant(indexOfPlant){
         console.log("delete called")
         console.log(indexOfPlant)
-        this.plantsArr=[...this.plantsArr].filter((id,plant)=>id!=indexOfPlant)
+        this.plantsArr = [...this.plantsArr].filter((plant, id) => id != indexOfPlant)
         console.log("plants : ",this.plantsArr)
-        this.plantsArr.length = this.plantsArr.length - 1
     }
 
     getArray(){

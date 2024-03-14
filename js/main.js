@@ -34,8 +34,8 @@ document.querySelector(".standard-btn").addEventListener('click', changeSystem)
 document.querySelector(".metric-btn").addEventListener('click', changeSystem)
 
 document.querySelector(".print-btn").addEventListener('click', function () {window.print()})
-document.querySelector(".clear-all-btn").addEventListener('click', toogleClearAllAlertVisibility)
-document.querySelector(".no-clear-all-btn").addEventListener('click', toogleClearAllAlertVisibility)
+document.querySelector(".clear-all-btn").addEventListener('click', toggleClearAllAlertVisibility)
+document.querySelector(".no-clear-all-btn").addEventListener('click', toggleClearAllAlertVisibility)
 document.querySelector(".yes-clear-all-btn").addEventListener('click', deletePlantList)
 
 document.querySelector('#name-field').addEventListener('keydown', testIfMoveFocusToHeightField)
@@ -46,14 +46,25 @@ document.querySelector('#add-btn').addEventListener('click', addPlant)
 addEventListenersToPlantIcons()
 
 function addEventListenersToPlantIcons(){
-    let trashCans = document.querySelectorAll('.delete-plant-btn')
-    for (let i = 0; i < trashCans.length; i++){
-        trashCans[i].addEventListener('click', deletePlant)
+
+    let plantDivs = document.querySelectorAll('.plant-div')
+    for (let i = 0; i < plantDivs.length; i++){
+        let trashCan = plantDivs[i].querySelector('.delete-plant-btn')
+        trashCan.addEventListener('click', deletePlant)
+        let editBtn = plantDivs[i].querySelector('.edit-plant-btn')
+        editBtn.addEventListener('click', toggleEditPlantView)
     }
+    
 }
 
+
+function toggleEditPlantView(){
+    const plantElement = this.parentElement.parentElement.parentElement
+
+} 
+
 function deletePlant(){
-    const plantElement=this.parentElement.parentElement.parentElement
+    const plantElement =this.parentElement.parentElement.parentElement
     if(confirm(`Are you sure you want to delete ${this.parentElement.parentElement.querySelector('.plant-name-div').innerText}?`)){
         // plant indices are stored as ids in the format "plant-#"
         let plantIndex = parseInt(plantElement.id.split("-")[1])
@@ -231,11 +242,11 @@ function refreshListView(){
 function deletePlantList(){
     plantList = new SortedPlantList()
     refreshListView()
-    toogleClearAllAlertVisibility()
+    toggleClearAllAlertVisibility()
     focusOnNameField()
 }
 
-function toogleClearAllAlertVisibility(){
+function toggleClearAllAlertVisibility(){
     document.querySelector(".clear-all-alert").classList.toggle('hidden')
 }
 
