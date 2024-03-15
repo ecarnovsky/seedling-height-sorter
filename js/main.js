@@ -68,6 +68,7 @@ function attemptAutocomplete(){
     if(plantFromSuggestions){
         document.querySelector('#height-field').value = plantFromSuggestions.height
         document.querySelector('#unit-field').value = plantFromSuggestions.unit
+        focusOnHeightField()
     }
 }
 
