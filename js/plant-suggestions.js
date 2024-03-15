@@ -1,55 +1,19 @@
 
-
+/**
+ * This file contains an array of plant suggestions used for the autocomplete of input fields.
+ */
 
 let listOfPlantSuggestions = [
-    {
-        name: "Marigold",
-        height: 6, 
-        unit: "in"
-    },
-    {
-        name: "Sunflower",
-        height: 5, 
-        unit: "ft"
-    },
-    {
-        name: "Morning Glory",
-        height: 8, 
-        unit: "ft"
-    },
-    {
-        name: "Cosmos",
-        height: 3, 
-        unit: "ft"
-    },
-    {
-        name: "Zinnia",
-        height: 2, 
-        unit: "ft"
-    },
-    {
-        name: "Nasturtium",
-        height: 12, 
-        unit: "in"
-    },
-    {
-        name: "Poppy",
-        height: 18, 
-        unit: "in"
-    },
-    {
-        name: "Pansy",
-        height: 5, 
-        unit: "in"
-    },
-    {
-        name: "Petunia",
-        height: 8, 
-        unit: "in"
-    },
-    {
-        name: "Amaranth",
-        height: 3, 
-        unit: "ft"
-    },
+
+    new Plant("Marigold", 6, "in"),
+    new Plant("Sunflower", 5, "ft"),
+    new Plant("Morning Glory", 8, "ft"),
+    new Plant("Cosmos", 3, "ft"),
+    new Plant("Zinnia", 2, "ft"),
+    new Plant("Nasturtium", 12, "in"),
+    new Plant("Poppy", 18, "in"),
+    new Plant("Pansy", 5, "in"),
+    new Plant("Petunia", 8, "in"),
+    new Plant("Amaranth", 3, "ft"),
+
 ]
