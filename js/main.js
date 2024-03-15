@@ -29,6 +29,8 @@ listOfPlantSuggestions.forEach(plant => {
     document.getElementById("plant-suggestions").innerHTML += `<option value="${plant.name}"></option>`
 })
 
+document.querySelector("#name-field").addEventListener('input', attemptAutocomplete)
+
 
 document.querySelector(".standard-btn").addEventListener('click', changeSystem)
 document.querySelector(".metric-btn").addEventListener('click', changeSystem)
@@ -55,6 +57,18 @@ function addEventListenersToPlantIcons(){
         editBtn.addEventListener('click', toggleEditPlantView)
     }
 
+}
+/**
+ * Tests if the name in the input field matches any of the plants in the 
+ * plant suggestions list, and if so fills out the height and unit 
+ * fields for that plant.
+ */
+function attemptAutocomplete(){
+    let plantFromSuggestions = listOfPlantSuggestions.find(plant => plant.name === this.value)
+    if(plantFromSuggestions){
+        document.querySelector('#height-field').value = plantFromSuggestions.height
+        document.querySelector('#unit-field').value = plantFromSuggestions.unit
+    }
 }
 
 
