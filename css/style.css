@@ -115,7 +115,8 @@ main .plant-div-container {
   background: white;
   border-radius: 10px;
   margin: 30px 60px;
-  height: 500px;
+  height: 505px;
+  overflow-y: auto;
 }
 main .plant-div-container .plant-div {
   display: flex;
