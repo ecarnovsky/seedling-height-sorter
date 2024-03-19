@@ -245,7 +245,7 @@ main {
 
 
 
-// /* media queries */
+/* media queries */
 
 // @media screen and (max-width: 900px)  {
 //     body {
@@ -266,32 +266,36 @@ main {
 //     }
 // }
 
-// @media print {
-//     body {
-//          -webkit-filter: grayscale(100%);
-//          -moz-filter: grayscale(100%);
-//          -ms-filter: grayscale(100%);
-//          filter: grayscale(100%);
-//     }
-//     body, .clickable {
-//          visibility: hidden;
-//     }
-//     .plant-div-container > div, .only-visible-when-printing{
-//          visibility: visible;
-//          position: absolute;
-//          top: 0;
-//          width: 100%;
-//     }
-//     .plant-div-container > div{
-//          top: 60px;
-//     }
-//     .only-visible-when-printing{
-//          display: block;
-//          font-size: x-large;
-//     }
-//     .plant-div {
-//          border: none;
-//          font-size: large;
-//          padding-left: 160px;
-//     }
-// }
+@media print {
+    body {
+         -webkit-filter: grayscale(100%);
+         -moz-filter: grayscale(100%);
+         -ms-filter: grayscale(100%);
+         filter: grayscale(100%);
+    }
+    body, .clickable, .fa-envira {
+         visibility: hidden;
+    }
+    .plant-div-container > div, .only-visible-when-printing{
+         visibility: visible;
+         position: absolute;
+         top: 0;
+         width: 100%;
+    }
+    .plant-div-container > div{
+         top: 60px;
+    }
+    .only-visible-when-printing{
+         text-align: center;
+         display: block;
+         font-size: x-large;
+    }
+    .plant-div {
+         border: none;
+         font-size: large;
+         padding-right: 160px;
+    }
+    .most-recently-added-plant {
+        box-shadow:  none;
+    }
+}
