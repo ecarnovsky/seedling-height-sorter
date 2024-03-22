@@ -47,9 +47,13 @@ document.querySelector('#add-btn').addEventListener('click', addPlant)
 
 refreshListView()
 
+/**
+ * Adds event listeners to all plant-divs' edit and delete buttons.
+ */
 function addEventListenersToPlantIcons(){
 
     let plantDivs = document.querySelectorAll('.plant-div')
+
     for (let i = 0; i < plantDivs.length; i++){
         let trashCan = plantDivs[i].querySelector('.delete-plant-btn')
         trashCan.addEventListener('click', deletePlant)
@@ -58,13 +62,14 @@ function addEventListenersToPlantIcons(){
     }
 
 }
+
 /**
  * Tests if the name in the input field matches any of the plants in the 
  * plant suggestions list, and if so fills out the height and unit 
  * fields for that plant.
  */
 function attemptAutocomplete(){
-    let plantFromSuggestions = listOfPlantSuggestions.find(plant => plant.name === this.value)
+    let plantFromSuggestions = listOfPlantSuggestions.find(plant => plant.name === this.value.toLowerCase())
     if(plantFromSuggestions){
         document.querySelector('#height-field').value = plantFromSuggestions.height
         document.querySelector('#unit-field').value = plantFromSuggestions.unit

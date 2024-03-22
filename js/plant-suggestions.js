@@ -5,15 +5,15 @@
 
 let listOfPlantSuggestions = [
 
-    new Plant("Marigold", 6, "in"),
-    new Plant("Sunflower", 5, "ft"),
-    new Plant("Morning Glory", 8, "ft"),
-    new Plant("Cosmos", 3, "ft"),
-    new Plant("Zinnia", 2, "ft"),
-    new Plant("Nasturtium", 12, "in"),
-    new Plant("Poppy", 18, "in"),
-    new Plant("Pansy", 5, "in"),
-    new Plant("Petunia", 8, "in"),
-    new Plant("Amaranth", 3, "ft"),
+    new Plant("marigold", 6, "in"),
+    new Plant("sunflower", 5, "ft"),
+    new Plant("morning Glory", 8, "ft"),
+    new Plant("cosmos", 3, "ft"),
+    new Plant("zinnia", 2, "ft"),
+    new Plant("nasturtium", 12, "in"),
+    new Plant("poppy", 18, "in"),
+    new Plant("pansy", 5, "in"),
+    new Plant("petunia", 8, "in"),
+    new Plant("amaranth", 3, "ft"),
 
 ]
