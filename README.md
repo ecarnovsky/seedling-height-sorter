@@ -15,8 +15,8 @@ Click [here](https://superb-druid-b2a311.netlify.app/) to begin sorting your pla
 
 
 ## Current Design:
-![A screenshot of my blog](https://github.com/ecarnovsky/ecarnovsky/blob/main/images/Screenshot-seedling-new.png)
+![A screenshot of the current design](https://github.com/ecarnovsky/ecarnovsky/blob/main/images/Screenshot-seedling-new.png)
 
 
 ## Older Design: 
-![A screenshot of my blog](https://github.com/ecarnovsky/ecarnovsky/blob/main/images/Screenshot-2024-02-17-152343.png)
+![A screenshot of the older design](https://github.com/ecarnovsky/ecarnovsky/blob/main/images/Screenshot-2024-02-17-152343.png)
