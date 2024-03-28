@@ -13,3 +13,10 @@ Click [here](https://superb-druid-b2a311.netlify.app/) to begin sorting your pla
 - ~~Plant suggestions automatically populating the height input fields~~  Done.
 - ~~Redesign the UI~~  Done.
 
+
+## Current Design:
+![A screenshot of the current design](https://github.com/ecarnovsky/ecarnovsky/blob/main/images/seedling-sorter-new-version.png)
+
+
+## Older Design: 
+![A screenshot of the older design](https://github.com/ecarnovsky/ecarnovsky/blob/main/images/seedling-sorter-old-version.png)
