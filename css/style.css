@@ -176,6 +176,39 @@ main .under-list-div > div > div:not(.clear-all-alert) {
 }
 
 /* media queries */
+@media screen and (max-width: 700px) {
+  header {
+    display: block;
+  }
+  header img {
+    max-height: 200px;
+    display: block;
+    margin: auto;
+  }
+  header h1 {
+    padding: 20px 15px;
+    padding-right: 90px;
+    width: 180px;
+    margin: auto;
+    font-size: xx-large;
+  }
+  header h1 > * {
+    display: inline;
+    justify-content: center;
+  }
+  header h1 div {
+    padding-bottom: 0px;
+  }
+  header h1 div::first-letter {
+    font-size: 130%;
+  }
+  header h1 :first-child + div {
+    padding-left: 0px;
+  }
+  header h1 :last-child {
+    padding-left: 15px;
+  }
+}
 @media print {
   body {
     -webkit-filter: grayscale(100%);

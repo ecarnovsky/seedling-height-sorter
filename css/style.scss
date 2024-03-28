@@ -79,8 +79,6 @@ header{
     img {
         max-width: 340px;
         border-radius: $borderRadiusOfHeader;
-        // padding-bottom: 17px;
-        // padding-right: 17px;
         margin-bottom: 17px;
         margin-right: 17px;
 
@@ -243,24 +241,46 @@ main {
 
 /* media queries */
 
-// @media screen and (max-width: 900px)  {
-//     body {
-//          background-color: white;
-//     }
-//     main{
-//          border: none;
-//     }
-    
-//     #name-field{
-//          min-width: 90%;
-//     }
-// }
+@media screen and (max-width: 700px)  {
+    header {
+        display: block;
+        img {
+            max-height: 200px;
+            display: block;
+            margin: auto;
+        }
+        
+    h1 {
+        padding: 20px 15px;
+        padding-right: 90px;
+        width:180px;
+        margin: auto;
+        font-size: xx-large;
 
-// @media screen and (max-width:800px){
-//     #name-field{
-//          min-width: 80%;
-//     }
-// }
+        > * {
+            display: inline;
+            justify-content: center;
+        }
+
+        div{
+            padding-bottom: 0px;
+            
+        }
+        div::first-letter{
+            font-size: 130%;
+        }
+
+        :first-child + div {
+            padding-left:  0px;
+        }
+        :last-child{
+            padding-left:  15px;
+        }
+
+    }
+}
+    
+}
 
 @media print {
     body {
